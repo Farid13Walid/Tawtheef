@@ -6,8 +6,8 @@ export default function Footer() {
   return <> 
      <div className='bg-dark p-4 d-flex justify-content-center align-items-center flex-column  '>
       
-      <div className=" container d-flex justify-content-around align-items-start m-5">
-      <div className="d-flex justify-content-center align-items-start flex-column">
+      <div className=" container row text-center text-md-start m-5">
+      <div className="col-12 col-md-3 mb-4 d-flex flex-column align-items-center align-items-md-start">
           <h4 className='text-white fw-bolder mb-3'>Search Trending</h4>
           <Link to="" className={`${style.linkHover} mb-2`} >Web Design</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Graphic Design</Link>
@@ -16,21 +16,21 @@ export default function Footer() {
           <Link to="" className={`${style.linkHover} mb-2`}>HTML5</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>CSS3</Link>
         </div>
-        <div className="d-flex justify-content-center align-items-start flex-column">
+        <div className="col-12 col-md-3 mb-4 d-flex flex-column align-items-center align-items-md-start">
           <h4 className='text-white fw-bolder mb-3'>Company</h4>
           <Link to="" className={`${style.linkHover} mb-2`}>About Us</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Career</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Blog</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Resources</Link>
         </div>
-        <div className="d-flex justify-content-center align-items-start flex-column">
+        <div className="col-12 col-md-3 mb-4 d-flex flex-column align-items-center align-items-md-start">
           <h4 className='text-white fw-bolder mb-3'>Support</h4>
           <Link to="" className={`${style.linkHover} mb-2`}>Support</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Privacy</Link>
           <Link to="" className={`${style.linkHover} mb-2`}>Terms of Service</Link>
           
         </div>
-        <div className="d-flex justify-content-center align-items-start flex-column">
+        <div className="col-12 col-md-3 mb-4 d-flex flex-column align-items-center align-items-md-start">
           <h4 className='text-white fw-bolder mb-5'>Contact Us</h4>
 
           <div className=''>
