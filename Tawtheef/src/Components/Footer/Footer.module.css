@@ -1,0 +1,17 @@
+
+.linkHover{
+color: lightgray;
+}
+.linkHover:hover{
+color: white;
+text-decoration: underline;
+ 
+}
+.fontAwesome{
+    background-color: white;
+    color: #0d6efd;
+}
+.fontAwesome:hover{
+    background-color: #0d6efd;
+    color: white;
+}
