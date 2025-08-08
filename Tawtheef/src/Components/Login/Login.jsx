@@ -7,17 +7,19 @@ import { Await, useNavigate,Link } from 'react-router-dom'
 
 
 export default function Login() {
+
+  
 const [isloading,setisloading]=useState(false);
 const [messageError,setmessageError]=useState('');
 let navigate =useNavigate();
 async function handleLogin(values){
   setisloading(true);
-  let {data} =await axios.post(`https://route-ecommerce.onrender.com/api/v1/auth/signin`,values).catch((errr)=>{
+  let {data} =await axios.post(`https://ecommerce.routemisr.com/api/v1/auth/signin`,values).catch((errr)=>{
  
 setisloading(false);
 setmessageError(`${errr.response.data.errors.param}:${errr.response.data.errors.msg}`);
   })
-  if(data.message=="sussec"){
+  if(data.message=="success"){
     localStorage.setItem('userToken',data.token)
     navigate('/');
     setisloading(false);
@@ -28,7 +30,7 @@ setmessageError(`${errr.response.data.errors.param}:${errr.response.data.errors.
 let validation=Yup.object({
   
   email:Yup.string().required('email is required').email('email is invalid'),
-  password:Yup.string().required('password is required').matches(/^[A-Z][a-z0-9]{5,10}$/)
+  password:Yup.string().required('password is required')
   
 })
 
@@ -65,10 +67,10 @@ let validation=Yup.object({
           
           
          
-          {isloading?<button type='button' className='btn bg-main p-2 text-white mt-3' ><i className='fas fa-spinner fa-spin'></i></button>:
-           <button disabled={!(formic.isValid && formic.dirty)} type='submit' className='btn bg-primary px-3 py-2 text-white mt-3' >Login</button>}
+          {isloading?<button type='button' className='btn bg-primary p-2 text-white mt-3' ><i className='fas fa-spinner fa-spin'></i></button>:
+           <button  type='submit' className='btn bg-primary px-3 py-2 text-white my-4 d-block'  >Login</button>}
 
-           <Link to="../Register" className="text-decoration-underline ms-4">are you didn't sign up</Link>
+           <Link to="../Register" className="text-decoration-underline ">are you didn't sign up</Link>
 
           
           
