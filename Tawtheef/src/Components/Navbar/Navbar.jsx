@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from "./Navbar.module.css";
 import { Link, Navigate } from "react-router-dom";
-import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 export default function Navbar() {
   const navigator = Navigate;
@@ -33,6 +31,7 @@ export default function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("userToken");
     setUser(null);
+    navigator("/Login");
   };
   return (
     <>
