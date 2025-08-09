@@ -69,6 +69,11 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
+              <li class="nav-item">
+                <Link class="nav-link fs-5 mx-2 text-white" to="SingleJop">
+                  SingleJopt
+                </Link>
+              </li>
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">
