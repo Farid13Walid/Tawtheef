@@ -63,7 +63,7 @@ export default function Register() {
         ) : null}
 
         <form onSubmit={formic.handleSubmit} className="w-75">
-          <label htmlFor="name">Name </label>
+          <label htmlFor="name ">Name </label>
           <input
             className="form-control mb-2"
             type="text"
@@ -102,7 +102,7 @@ export default function Register() {
             <div className="alert alert-danger ">{formic.errors.password}</div>
           ) : null}
 
-          <label htmlFor="rePassword">RePassword</label>
+          <label htmlFor="rePassword ">RePassword</label>
           <input
             className="form-control mb-2"
             type="password"

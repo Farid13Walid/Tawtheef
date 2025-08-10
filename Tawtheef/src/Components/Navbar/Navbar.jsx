@@ -71,7 +71,7 @@ export default function Navbar() {
               </li>
               <li class="nav-item">
                 <Link class="nav-link fs-5 mx-2 text-white" to="SingleJop">
-                  SingleJopt
+                  SingleJop
                 </Link>
               </li>
             </ul>
