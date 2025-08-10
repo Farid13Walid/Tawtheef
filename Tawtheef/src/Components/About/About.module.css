@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+
 /* الخلفية */
 .heroImage {
     background: url('../../assets/hero_1.jpg');
@@ -12,8 +13,9 @@ body {
     min-height: 50vh;
    
 }
+
 .heroImage>div>h1{
- z-index: 2;
+ z-index: 1;
 }
 .heroImage>div::before {
 content: '';

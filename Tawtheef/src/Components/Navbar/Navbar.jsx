@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import style from "./Navbar.module.css";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
+import FavouriteJobs from "./FavouriteJobs";
+import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 export default function Navbar() {
-  const navigator = Navigate;
+  const navigator = useNavigate();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -18,7 +20,7 @@ export default function Navbar() {
         setUser({
           _id: decoded.id,
           name: decoded.name,
-          email: decoded.email || "",
+          email: decoded.email,
         });
       } catch (error) {
         console.error("Error decoding token:", error);
@@ -28,11 +30,26 @@ export default function Navbar() {
       }
     }
   }, []);
+  const [savedJobs, setSavedJobs] = useState([]);
+
+  // Fetch saved jobs from localStorage
+  useEffect(() => {
+    const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
+    setSavedJobs(jobs);
+  }, []);
+
+  // Remove job from saved jobs
+  const removeJob = (jobId) => {
+    const updatedJobs = savedJobs.filter((job) => job.id !== jobId);
+    setSavedJobs(updatedJobs);
+    localStorage.setItem("savedJobs", JSON.stringify(updatedJobs));
+  };
 
   // Logout function
   const handleLogout = () => {
-    localStorage.removeItem("userToken");
+    localStorage.clear();
     setUser(null);
+    navigator("/Login");
   };
   return (
     <>
@@ -71,7 +88,7 @@ export default function Navbar() {
               </li>
               <li class="nav-item">
                 <Link class="nav-link fs-5 mx-2 text-white" to="SingleJop">
-                  SingleJop
+                  SingleJob
                 </Link>
               </li>
             </ul>
@@ -81,7 +98,7 @@ export default function Navbar() {
                 className="btn btn-outline-light my-2 my-sm-0 me-3 py-2 px-3"
                 type="button"
               >
-                Post-jop
+                Post-job
               </button>
             </Link>
             {isLoading ? (
@@ -89,31 +106,62 @@ export default function Navbar() {
             ) : user ? (
               <div className="dropdown">
                 <button
-                  className="btn btn-outline-light my-2 my-sm-0 py-2 px-3 dropdown-toggle d-flex align-items-center"
+                  className="btn btn-outline-light d-flex align-items-center gap-2"
                   type="button"
                   id="userDropdown"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  <span>{user.name || "User"}</span>
+                  <img
+                    src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                      user.name || "User"
+                    )}`}
+                    alt="avatar"
+                    className="rounded-circle"
+                    width="32"
+                    height="32"
+                  />
                 </button>
+
                 <ul
-                  className="dropdown-menu dropdown-menu-end"
+                  className="dropdown-menu dropdown-menu-end shadow p-3"
+                  style={{ minWidth: "250px" }}
                   aria-labelledby="userDropdown"
                 >
-                  <li>
-                    <span className="dropdown-item-text">
-                      {user.name || "User"}
-                    </span>
+                  <li className="mb-2 border-bottom pb-2">
+                    <div className="d-flex align-items-center gap-2">
+                      <img
+                        src={`https://ui-avatars.com/api/?name=${encodeURIComponent(
+                          user.name || "User"
+                        )}&background=random`}
+                        alt="avatar"
+                        className="rounded-circle"
+                        width="40"
+                        height="40"
+                      />
+                      <div>
+                        <strong>{user.name || "User"}</strong>
+                        <div
+                          className="text-muted"
+                          style={{ fontSize: "0.85rem" }}
+                        >
+                          {user.email}
+                        </div>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <Link className="dropdown-item" to="/favorite-jobs">
-                      Favorite Jobs
-                    </Link>
+                    <FavouriteJobs
+                      savedJobs={savedJobs}
+                      removeJob={removeJob}
+                    />
                   </li>
                   <li>
-                    <button className="dropdown-item" onClick={handleLogout}>
-                      Logout
+                    <button
+                      className="dropdown-item text-danger"
+                      onClick={handleLogout}
+                    >
+                      🚪 Logout
                     </button>
                   </li>
                 </ul>
