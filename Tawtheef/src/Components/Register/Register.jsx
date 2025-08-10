@@ -56,6 +56,15 @@ export default function Register() {
 
   return (
     <>
+          <section className="w-100">
+      <div className={style.contactImg}>
+        
+      <div className={style.layer}></div>
+      </div>
+      <div className={style.contactTitle}>
+        <h1 className='fw-bold'>Register</h1>
+      </div>
+    </section>
       <div className="w-75 mx-auto mt-5 py-4 vh-100 d-flex justify-content-space align-items-center flex-column">
         <h1>Register Now : </h1>
         {messageError ? (
@@ -63,7 +72,7 @@ export default function Register() {
         ) : null}
 
         <form onSubmit={formic.handleSubmit} className="w-75">
-          <label htmlFor="name ">Name </label>
+          <label htmlFor="name " className="fs-4 py-2">Name </label>
           <input
             className="form-control mb-2"
             type="text"
@@ -76,7 +85,7 @@ export default function Register() {
             <div className="alert alert-danger ">{formic.errors.name}</div>
           ) : null}
 
-          <label htmlFor="email">Email </label>
+          <label htmlFor="email" className="fs-4 py-2">Email </label>
           <input
             className="form-control mb-2"
             type="email"
@@ -89,9 +98,9 @@ export default function Register() {
             <div className="alert alert-danger ">{formic.errors.email}</div>
           ) : null}
 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="fs-4">Password</label>
           <input
-            className="form-control mb-2"
+            className="form-control mb-2 py-2"
             type="password"
             name="password"
             id="password"
@@ -102,9 +111,9 @@ export default function Register() {
             <div className="alert alert-danger ">{formic.errors.password}</div>
           ) : null}
 
-          <label htmlFor="rePassword ">RePassword</label>
+          <label htmlFor="rePassword " className="fs-4">RePassword</label>
           <input
-            className="form-control mb-2"
+            className="form-control mb-2 py-2"
             type="password"
             name="rePassword"
             id="rePassword"
@@ -117,7 +126,7 @@ export default function Register() {
             </div>
           ) : null}
 
-          <label htmlFor="phone">Phone</label>
+          <label htmlFor="phone" className="fs-4 py-2">Phone</label>
           <input
             className="form-control mb-3"
             type="tel"
@@ -137,7 +146,7 @@ export default function Register() {
           ) : (
             <button
               type="submit"
-              className="btn bg-primary px-3 py-2 text-white mt-3"
+              className="btn bg-primary px-3 py-2 text-white mt-3 fs-5"
             >
               Register
             </button>

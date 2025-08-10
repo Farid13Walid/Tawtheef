@@ -1,0 +1,27 @@
+
+.header{
+    width: 100%;
+    min-height: 900px;
+    background-image: url("../../assets/hero_1.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+
+}
+
+.header > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+.header::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}

@@ -24,3 +24,59 @@
 .contactTitle>h1{
     font-size: 3rem;
 }
+
+
+
+
+.jobHeader {
+  align-items: center;
+}
+
+.jobLogo {
+  width: 120px;
+  height: auto;
+}
+
+.jobInfo {
+  flex: 1;
+}
+
+.leftCol {
+  width: 65%;
+}
+
+.rightCol {
+  width: 33%;
+}
+
+/* --- الميديا كويريز --- */
+@media (max-width: 992px) {
+  .leftCol,
+  .rightCol {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .jobContent {
+    flex-direction: column !important;
+  }
+
+  .jobLogo {
+    width: 80px !important;
+  }
+
+  button {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .jobInfo h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .jobLogo {
+    width: 60px !important;
+  }
+}

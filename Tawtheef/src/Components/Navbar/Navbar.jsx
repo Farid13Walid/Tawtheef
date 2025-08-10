@@ -53,13 +53,13 @@ export default function Navbar() {
   };
   return (
     <>
-      <nav class="navbar navbar-expand-sm navbar-light bg-primary ">
-        <div class="container">
-          <Link class="navbar-brand fs-3 fw-bold text-white" to="/">
+      <nav className="navbar navbar-expand-sm navbar-light bg-primary ">
+        <div className="container">
+          <Link className="navbar-brand fs-3 fw-bold text-white" to="/">
             Tawtheef
           </Link>
           <button
-            class="navbar-toggler d-lg-none"
+            className="navbar-toggler d-lg-none"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapsibleNavId"
@@ -67,30 +67,31 @@ export default function Navbar() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav me-auto mt-2 mt-lg-0 mx-auto ">
-              <li class="nav-item">
-                <Link class="nav-link fs-5 mx-2 text-white" to="/">
+          <div className="collapse navbar-collapse" id="collapsibleNavId">
+            <ul className="navbar-nav me-auto mt-2 mt-lg-0 mx-auto ">
+              <li className="nav-item">
+                <Link className="nav-link fs-5 mx-2 text-white" to="/">
                   Home
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link fs-5 mx-2 text-white" to="About">
+              <li className="nav-item">
+                <Link className="nav-link fs-5 mx-2 text-white" to="About">
                   About
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link fs-5 mx-2 text-white" to="Contact">
+              <li className="nav-item">
+                <Link className="nav-link fs-5 mx-2 text-white" to="Contact">
                   Contact
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link fs-5 mx-2 text-white" to="SingleJop">
-                  SingleJob
+              <li className="nav-item">
+                <Link className="nav-link fs-5 mx-2 text-white" to="AllJobs">
+                  Jobs
                 </Link>
               </li>
+
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">

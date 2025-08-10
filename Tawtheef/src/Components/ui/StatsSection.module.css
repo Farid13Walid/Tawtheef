@@ -1,0 +1,40 @@
+.bgImage {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 0; /* مهم علشان يكون سياق المرجعية للـ z-index */
+}
+
+.overlayPrimary::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bs-primary);
+  z-index: 1; /* ده يفضل أقل من container */
+}
+
+.stats-section  {
+  position: relative;
+  z-index: 4; /* ده أعلى من الخلفية */
+}
+
+
+.sectionTitle {
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.leadText {
+  color: white;
+}
+
+.caption {
+  color: white !important;
+  display: block;
+  text-align: center;
+}

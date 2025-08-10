@@ -1,0 +1,309 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "logo": "images/job_logo_1.jpg",
+      "title": "Product Designer",
+      "company": "Adidas",
+      "location": "New York, New York",
+      "type": "Part Time",
+      "badgeType": "danger",
+      "image": "images/job_single_img_1.jpg",
+      "description": [
+        "Design innovative product experiences for Adidas customers, balancing aesthetics with functionality.",
+        "Collaborate with cross-functional teams to develop product concepts and prototypes."
+      ],
+      "responsibilities": [
+        "Create wireframes, mockups, and prototypes for new products.",
+        "Conduct user research and usability testing.",
+        "Work with engineers to implement designs.",
+        "Maintain brand consistency across all product lines."
+      ],
+      "education_experience": [
+        "Bachelor’s degree in Design, Human-Computer Interaction or related field.",
+        "3+ years experience in product design."
+      ],
+      "benefits": [
+        "Flexible working hours.",
+        "Health insurance and wellness programs.",
+        "Employee discounts on products."
+      ],
+      "summary": {
+        "published_on": "June 1, 2024",
+        "vacancy": 3,
+        "employment_status": "Part-time",
+        "experience": "2 to 4 years",
+        "job_location": "New York, New York",
+        "salary": "$40k - $60k",
+        "gender": "Any",
+        "application_deadline": "July 15, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 2,
+      "logo": "images/job_logo_2.jpg",
+      "title": "Digital Marketing Director",
+      "company": "Sprint",
+      "location": "Overland Park, Kansas",
+      "type": "Full Time",
+      "badgeType": "success",
+      "image": "images/job_single_img_2.jpg",
+      "description": [
+        "Lead Sprint's digital marketing strategies to increase brand awareness and customer acquisition.",
+        "Analyze market trends and competitor activities to optimize campaigns."
+      ],
+      "responsibilities": [
+        "Develop and oversee digital marketing campaigns.",
+        "Manage social media and online presence.",
+        "Coordinate with sales and product teams for integrated marketing.",
+        "Measure campaign performance and ROI."
+      ],
+      "education_experience": [
+        "Bachelor’s degree in Marketing, Business or related.",
+        "5+ years experience in digital marketing leadership."
+      ],
+      "benefits": [
+        "Competitive salary with performance bonuses.",
+        "Comprehensive health coverage.",
+        "Paid time off and flexible schedules."
+      ],
+      "summary": {
+        "published_on": "May 20, 2024",
+        "vacancy": 1,
+        "employment_status": "Full-time",
+        "experience": "5+ years",
+        "job_location": "Overland Park, Kansas",
+        "salary": "$80k - $120k",
+        "gender": "Any",
+        "application_deadline": "June 30, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 3,
+      "logo": "images/job_logo_3.jpg",
+      "title": "Back-end Engineer (Python)",
+      "company": "Amazon",
+      "location": "Overland Park, Kansas",
+      "type": "Full Time",
+      "badgeType": "success",
+      "image": "images/job_single_img_3.jpg",
+      "description": [
+        "Develop scalable backend systems using Python to support Amazon's e-commerce platform.",
+        "Ensure system reliability, scalability, and security."
+      ],
+      "responsibilities": [
+        "Build and maintain APIs and microservices.",
+        "Optimize application for maximum speed and scalability.",
+        "Collaborate with front-end developers and product managers.",
+        "Troubleshoot and debug production issues."
+      ],
+      "education_experience": [
+        "Bachelor’s degree in Computer Science or related.",
+        "4+ years experience in backend development."
+      ],
+      "benefits": [
+        "Stock options and bonuses.",
+        "Health and dental insurance.",
+        "Generous paid vacation and parental leave."
+      ],
+      "summary": {
+        "published_on": "April 10, 2024",
+        "vacancy": 2,
+        "employment_status": "Full-time",
+        "experience": "3 to 5 years",
+        "job_location": "Overland Park, Kansas",
+        "salary": "$90k - $130k",
+        "gender": "Any",
+        "application_deadline": "May 31, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 4,
+      "logo": "images/job_logo_4.jpg",
+      "title": "Senior Art Director",
+      "company": "Microsoft",
+      "location": "Anywhere",
+      "type": "Full Time",
+      "badgeType": "success",
+      "image": "images/job_single_img_4.jpg",
+      "description": [
+        "Lead the creative vision for Microsoft's advertising and branding projects.",
+        "Manage a team of designers and collaborate across departments."
+      ],
+      "responsibilities": [
+        "Develop creative concepts and campaigns.",
+        "Direct photo shoots and video productions.",
+        "Ensure brand guidelines compliance.",
+        "Mentor junior designers."
+      ],
+      "education_experience": [
+        "Bachelor’s degree in Art, Design or related.",
+        "7+ years experience in creative leadership."
+      ],
+      "benefits": [
+        "Health insurance and retirement plans.",
+        "Remote work options.",
+        "Professional development budget."
+      ],
+      "summary": {
+        "published_on": "March 5, 2024",
+        "vacancy": 1,
+        "employment_status": "Full-time",
+        "experience": "7+ years",
+        "job_location": "Remote",
+        "salary": "$100k - $140k",
+        "gender": "Any",
+        "application_deadline": "April 30, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 5,
+      "logo": "images/job_logo_5.jpg",
+      "title": "Product Designer",
+      "company": "Puma",
+      "location": "San Mateo, CA",
+      "type": "Full Time",
+      "badgeType": "success",
+      "image": "images/job_single_img_5.jpg",
+      "description": [
+        "Design innovative product experiences for Puma customers, focusing on style and usability.",
+        "Collaborate with product and engineering teams to deliver impactful solutions."
+      ],
+      "responsibilities": [
+        "Create user-centered designs and prototypes.",
+        "Conduct user research and analyze feedback.",
+        "Maintain design consistency across platforms."
+      ],
+      "education_experience": [
+        "Bachelor’s degree in Design or related.",
+        "3+ years experience in product design."
+      ],
+      "benefits": [
+        "Competitive salary and bonuses.",
+        "Health and wellness programs.",
+        "Employee product discounts."
+      ],
+      "summary": {
+        "published_on": "February 15, 2024",
+        "vacancy": 2,
+        "employment_status": "Full-time",
+        "experience": "2 to 4 years",
+        "job_location": "San Mateo, CA",
+        "salary": "$70k - $100k",
+        "gender": "Any",
+        "application_deadline": "March 31, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 6,
+      "logo": "images/job_logo_1.jpg",
+      "title": "Product Designer",
+      "company": "Adidas",
+      "location": "New York, New York",
+      "type": "Part Time",
+      "badgeType": "danger",
+      "image": "images/job_single_img_6.jpg",
+      "description": [
+        "Work on diverse product design projects for Adidas's line of sportswear and accessories.",
+        "Collaborate with marketing and development teams to innovate new designs."
+      ],
+      "responsibilities": [
+        "Produce sketches, wireframes, and design specifications.",
+        "Support user experience improvements.",
+        "Participate in brainstorming sessions."
+      ],
+      "education_experience": [
+        "Degree in Design or related field.",
+        "2+ years experience preferred."
+      ],
+      "benefits": [
+        "Flexible schedule.",
+        "Discounts on Adidas products.",
+        "Health benefits."
+      ],
+      "summary": {
+        "published_on": "January 10, 2024",
+        "vacancy": 1,
+        "employment_status": "Part-time",
+        "experience": "1 to 3 years",
+        "job_location": "New York, New York",
+        "salary": "$35k - $50k",
+        "gender": "Any",
+        "application_deadline": "February 28, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    },
+    {
+      "id": 7,
+      "logo": "images/job_logo_2.jpg",
+      "title": "Digital Marketing Director",
+      "company": "Sprint",
+      "location": "Overland Park, Kansas",
+      "type": "Full Time",
+      "badgeType": "success",
+      "image": "images/job_single_img_7.jpg",
+      "description": [
+        "Oversee all digital marketing initiatives and campaigns at Sprint.",
+        "Drive customer engagement and growth through digital channels."
+      ],
+      "responsibilities": [
+        "Manage SEO, SEM, and social media campaigns.",
+        "Analyze campaign performance and adjust strategies.",
+        "Lead a team of marketing professionals."
+      ],
+      "education_experience": [
+        "Bachelor's degree in Marketing or Business.",
+        "5+ years leadership experience."
+      ],
+      "benefits": [
+        "Competitive pay.",
+        "Comprehensive health benefits.",
+        "Remote work options."
+      ],
+      "summary": {
+        "published_on": "December 1, 2023",
+        "vacancy": 1,
+        "employment_status": "Full-time",
+        "experience": "5+ years",
+        "job_location": "Overland Park, Kansas",
+        "salary": "$85k - $125k",
+        "gender": "Any",
+        "application_deadline": "January 31, 2024"
+      },
+      "share_links": {
+        "facebook": "#",
+        "twitter": "#",
+        "linkedin": "#"
+      }
+    }
+  ]
+}

@@ -1,1 +1,26 @@
-.Login {}
+.contactImg{
+    position: relative;
+    height:50vh;
+    background-image: url('../../assets/hero_1.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+.layer{
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.contactTitle{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -250%);
+    color: white;
+    
+}
+.contactTitle>h1{
+    font-size: 3rem;
+}

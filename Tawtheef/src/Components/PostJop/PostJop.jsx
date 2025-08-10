@@ -212,7 +212,7 @@ export default function PostJop() {
           {/* Submit Button */}
           <div className="text-center my-5">
             <button type="submit" className="btn  btn-primary btn-lg px-5">
-              Save Job
+              Post Job
             </button>
           </div>
         </form>

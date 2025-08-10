@@ -44,6 +44,15 @@ export default function Login() {
 
   return (
     <>
+      <section className="w-100">
+      <div className={style.contactImg}>
+        
+      <div className={style.layer}></div>
+      </div>
+      <div className={style.contactTitle}>
+        <h1 className='fw-bold'>Login</h1>
+      </div>
+    </section>
       <div className="w-75 mx-auto  py-4 vh-100 mt-5 d-flex justify-content-space align-items-center flex-column ">
         <h1>Login Now : </h1>
         {messageError ? (
@@ -51,9 +60,9 @@ export default function Login() {
         ) : null}
 
         <form onSubmit={formic.handleSubmit} className=" w-75">
-          <label htmlFor="email">Email </label>
+          <label htmlFor="email" className="fs-3">Email </label>
           <input
-            className="form-control mb-2 "
+            className="form-control mb-2 py-2"
             type="email"
             name="email"
             id="email"
@@ -64,9 +73,9 @@ export default function Login() {
             <div className="alert alert-danger ">{formic.errors.email}</div>
           ) : null}
 
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password" className="fs-3">Password</label>
           <input
-            className="form-control mb-2"
+            className="form-control mb-2 py-2"
             type="password"
             name="password"
             id="password"
@@ -87,7 +96,7 @@ export default function Login() {
           ) : (
             <button
               type="submit"
-              className="btn bg-primary px-3 py-2 text-white my-4 d-block"
+              className="btn bg-primary px-3 py-2 text-white my-4 d-block fs-5"
             >
               Login
             </button>
