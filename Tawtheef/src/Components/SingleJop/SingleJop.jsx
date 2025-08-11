@@ -5,6 +5,9 @@ import style from "./SingleJop.module.css";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useJobs } from "../../context/JopContext";
+import TestimonialSlider from "../ui/TestimonialSlider";
+import StateSectionContainer from "../ui/StateSectionContainer";
+import MobileAppsSection from "../ui/MobileAppsSection";
 
 export default function SingleJop() {
   const { id } = useParams();
@@ -79,8 +82,8 @@ export default function SingleJop() {
           </div>
         </div>
 
-        <div className="d-flex mt-4 mainContent">
-          <div className="leftCol" style={{ width: "65%" }}>
+        <div className="row mt-4 mainContent">
+             <div className="col-12 col-lg-8 mb-4">
             <img src={pictureJop} alt="" className="w-100 mb-b-4 rounded-4" />
 
             <div className="my-5">
@@ -136,13 +139,13 @@ export default function SingleJop() {
                 onClick={handleSavedJobs}
                 className={`btn ${
                   isSaved ? "btn-success" : "btn-outline-secondary"
-                } px-5 py-3 rounded-3 text-dark`}
+                } px-5 py-3 rounded-3 text-dark mx-2`}
                 style={{ width: "45%" }}
               >
                 {isSaved ? "Saved ✅" : "Save Job"}
               </button>
               <button
-                className="btn btn-primary px-5 py-3 rounded-3 text-white ms-4"
+                className="btn btn-primary px-5 py-3 rounded-3 text-white mx-2"
                 style={{ width: "45%" }}
               >
                 Apply Now
@@ -150,10 +153,8 @@ export default function SingleJop() {
             </div>
           </div>
 
-          <div
-            className="d-flex flex-column ms-4 rightCol"
-            style={{ width: "33%" }}
-          >
+          <div className="col-12 col-lg-4">
+
             <div className="bg-body-secondary p-5 pb-4 rounded-4">
               <h3 className="mb-2 fw-bold text-primary">Job Summary</h3>
               <p className="text-secondary fs-6 mt-3">
@@ -205,6 +206,10 @@ export default function SingleJop() {
           </div>
         </div>
       </div>
+       <TestimonialSlider />
+       <StateSectionContainer className="pb-0">
+         <MobileAppsSection />
+       </StateSectionContainer>
     </>
   );
 }

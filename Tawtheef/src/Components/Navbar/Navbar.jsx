@@ -92,6 +92,7 @@ export default function Navbar() {
                 </Link>
               </li>
 
+
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">
