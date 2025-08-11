@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Navbar.module.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import FavouriteJobs from "./FavouriteJobs";
 import { useNavigate } from "react-router-dom";
@@ -38,7 +38,7 @@ export default function Navbar() {
   useEffect(() => {
     const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
     setSavedJobs(jobs);
-  }, []);
+  }, [localStorage.getItem("userToken")]);
 
   // Logout function
   const handleLogout = () => {
@@ -86,7 +86,6 @@ export default function Navbar() {
                   Jobs
                 </Link>
               </li>
-
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">
