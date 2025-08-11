@@ -5,8 +5,10 @@ import axios from "axios";
 import FavouriteJobs from "./FavouriteJobs";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import { useJobs } from "../../context/JopContext";
 export default function Navbar() {
   const navigator = useNavigate();
+  const { deleteJob } = useJobs();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -29,7 +31,7 @@ export default function Navbar() {
         setIsLoading(false);
       }
     }
-  }, []);
+  }, [localStorage.getItem("userToken")]);
   const [savedJobs, setSavedJobs] = useState([]);
 
   // Fetch saved jobs from localStorage
@@ -37,13 +39,6 @@ export default function Navbar() {
     const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
     setSavedJobs(jobs);
   }, []);
-
-  // Remove job from saved jobs
-  const removeJob = (jobId) => {
-    const updatedJobs = savedJobs.filter((job) => job.id !== jobId);
-    setSavedJobs(updatedJobs);
-    localStorage.setItem("savedJobs", JSON.stringify(updatedJobs));
-  };
 
   // Logout function
   const handleLogout = () => {
@@ -91,7 +86,6 @@ export default function Navbar() {
                   Jobs
                 </Link>
               </li>
-
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">
@@ -154,7 +148,7 @@ export default function Navbar() {
                   <li>
                     <FavouriteJobs
                       savedJobs={savedJobs}
-                      removeJob={removeJob}
+                      deleteJob={deleteJob}
                     />
                   </li>
                   <li>
