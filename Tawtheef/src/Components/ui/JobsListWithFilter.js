@@ -23,11 +23,11 @@ export default function JobsListWithFilter() {
   const filteredJobs = jobs.filter((job) => {
     const lowerFilter = filterText.toLowerCase();
 
-    const matchesText =
-      job.title.toLowerCase().includes(lowerFilter) ||
-      job.company.toLowerCase().includes(lowerFilter) ||
-      job.location.toLowerCase().includes(lowerFilter) ||
-      job.type.toLowerCase().includes(lowerFilter);
+  const matchesText =
+    (job.title?.toLowerCase() || "").includes(lowerFilter) ||
+    (job.company?.toLowerCase() || "").includes(lowerFilter) ||
+    (job.location?.toLowerCase() || "").includes(lowerFilter) ||
+    (job.type?.toLowerCase() || "").includes(lowerFilter);
 
     const matchesRegion = region ? job.location === region : true;
     const matchesJobType = jobType ? job.type === jobType : true;
