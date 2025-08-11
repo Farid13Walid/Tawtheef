@@ -16,18 +16,16 @@ export default function JobsListWithFilter() {
     return <Spinner />;
   }
 
-  
-  const uniqueRegions = [...new Set(jobs.map(job => job.location))];
+  const uniqueRegions = [...new Set(jobs.map((job) => job.location))];
 
-  
   const filteredJobs = jobs.filter((job) => {
     const lowerFilter = filterText.toLowerCase();
 
-  const matchesText =
-    (job.title?.toLowerCase() || "").includes(lowerFilter) ||
-    (job.company?.toLowerCase() || "").includes(lowerFilter) ||
-    (job.location?.toLowerCase() || "").includes(lowerFilter) ||
-    (job.type?.toLowerCase() || "").includes(lowerFilter);
+    const matchesText =
+      (job.title?.toLowerCase() || "").includes(lowerFilter) ||
+      (job.company?.toLowerCase() || "").includes(lowerFilter) ||
+      (job.location?.toLowerCase() || "").includes(lowerFilter) ||
+      (job.type?.toLowerCase() || "").includes(lowerFilter);
 
     const matchesRegion = region ? job.location === region : true;
     const matchesJobType = jobType ? job.type === jobType : true;
@@ -38,11 +36,10 @@ export default function JobsListWithFilter() {
   return (
     <section className={styles.siteSection}>
       <div className="container">
-
         {/* Search and Filter Inputs */}
         <form
           className="search-jop-form mb-5"
-          onSubmit={(e) => e.preventDefault()} 
+          onSubmit={(e) => e.preventDefault()}
         >
           <div className="row g-3">
             <div className="col-md-4">
@@ -84,7 +81,6 @@ export default function JobsListWithFilter() {
           </div>
         </form>
 
- 
         <div className="row mb-4 justify-content-center">
           <div className="col-md-7 text-center">
             <h2 className={`${styles.sectionTitle} mb-2`}>
@@ -94,7 +90,6 @@ export default function JobsListWithFilter() {
           </div>
         </div>
 
-   
         {filteredJobs.length === 0 ? (
           <p className="text-center">No jobs match your filter.</p>
         ) : (

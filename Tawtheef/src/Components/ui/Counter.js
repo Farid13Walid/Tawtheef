@@ -8,7 +8,7 @@ export default function Counter({ targetValue, start }) {
 
     let startValue = 0;
     const duration = 2000;
-    const stepTime = Math.max(Math.floor(duration / targetValue), .00001);
+    const stepTime = Math.max(Math.floor(duration / targetValue), 0.00001);
 
     const counter = setInterval(() => {
       startValue += 1;
@@ -21,5 +21,9 @@ export default function Counter({ targetValue, start }) {
     return () => clearInterval(counter);
   }, [start, targetValue]);
 
-  return <strong className="number fs-1 fw-bolder display-3 text-white">{count}</strong>;
+  return (
+    <strong className="number fs-1 fw-bolder display-3 text-white">
+      {count}
+    </strong>
+  );
 }

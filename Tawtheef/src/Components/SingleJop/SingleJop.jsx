@@ -83,7 +83,7 @@ export default function SingleJop() {
         </div>
 
         <div className="row mt-4 mainContent">
-             <div className="col-12 col-lg-8 mb-4">
+          <div className="col-12 col-lg-8 mb-4">
             <img src={pictureJop} alt="" className="w-100 mb-b-4 rounded-4" />
 
             <div className="my-5">
@@ -154,7 +154,6 @@ export default function SingleJop() {
           </div>
 
           <div className="col-12 col-lg-4">
-
             <div className="bg-body-secondary p-5 pb-4 rounded-4">
               <h3 className="mb-2 fw-bold text-primary">Job Summary</h3>
               <p className="text-secondary fs-6 mt-3">
@@ -206,10 +205,10 @@ export default function SingleJop() {
           </div>
         </div>
       </div>
-       <TestimonialSlider />
-       <StateSectionContainer className="pb-0">
-         <MobileAppsSection />
-       </StateSectionContainer>
+      <TestimonialSlider />
+      <StateSectionContainer className="pb-0">
+        <MobileAppsSection />
+      </StateSectionContainer>
     </>
   );
 }

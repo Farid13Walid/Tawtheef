@@ -38,7 +38,7 @@ export default function Navbar() {
   useEffect(() => {
     const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
     setSavedJobs(jobs);
-  }, []);
+  }, [localStorage.getItem("userToken")]);
 
   // Logout function
   const handleLogout = () => {
@@ -83,10 +83,9 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link fs-5 mx-2 text-white" to="AllJobs">
-                 <i class="fa-solid fa-magnifying-glass me-1"></i> Jobs 
+                  <i class="fa-solid fa-magnifying-glass me-1"></i> Jobs
                 </Link>
               </li>
-
             </ul>
 
             <Link className="nav-link fs-5 " to="PostJob">
