@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./Navbar.module.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import FavouriteJobs from "./FavouriteJobs";
 import { useNavigate } from "react-router-dom";
@@ -83,7 +83,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link fs-5 mx-2 text-white" to="AllJobs">
-                 <i class="fa-solid fa-magnifying-glass me-1"></i> Jobs 
+                  <i class="fa-solid fa-magnifying-glass me-1"></i> Jobs
                 </Link>
               </li>
             </ul>
