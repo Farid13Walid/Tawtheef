@@ -21,5 +21,5 @@ export default function Counter({ targetValue, start }) {
     return () => clearInterval(counter);
   }, [start, targetValue]);
 
-  return <strong className="number fs-2 display-3 text-white">{count}</strong>;
+  return <strong className="number fs-1 fw-bolder display-3 text-white">{count}</strong>;
 }

@@ -83,7 +83,7 @@ export default function Navbar() {
               </li>
               <li className="nav-item">
                 <Link className="nav-link fs-5 mx-2 text-white" to="AllJobs">
-                  Jobs
+                 <i class="fa-solid fa-magnifying-glass me-1"></i> Jobs 
                 </Link>
               </li>
 
