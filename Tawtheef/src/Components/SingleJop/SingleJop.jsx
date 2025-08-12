@@ -13,7 +13,7 @@ export default function SingleJop() {
   const { id } = useParams();
   const { getJob, currentJob, isLoading } = useJobs();
   const navigate = useNavigate();
-
+  const [savedJobs, setSavedJobs] = useState([]);
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
@@ -40,8 +40,17 @@ export default function SingleJop() {
       return;
     }
 
-    const newSavedJobs = [...savedJobs, currentJob];
+    const jobToSave = {
+      id: currentJob.id,
+      title: currentJob.title,
+      company: currentJob.company,
+      logo: currentJob.logo || currentJob.companyLogo || "",
+      location: currentJob.location,
+    };
+
+    const newSavedJobs = [...savedJobs, jobToSave];
     localStorage.setItem("savedJobs", JSON.stringify(newSavedJobs));
+    setSavedJobs(newSavedJobs); // تحديث فوري بدون Refresh
     setIsSaved(true);
   };
 

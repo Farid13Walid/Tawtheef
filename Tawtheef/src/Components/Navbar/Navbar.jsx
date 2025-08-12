@@ -33,12 +33,18 @@ export default function Navbar() {
     }
   }, [localStorage.getItem("userToken")]);
   const [savedJobs, setSavedJobs] = useState([]);
-
-  // Fetch saved jobs from localStorage
   useEffect(() => {
     const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
     setSavedJobs(jobs);
-  }, [localStorage.getItem("userToken")]);
+
+    const handleStorageChange = () => {
+      const updatedJobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
+      setSavedJobs(updatedJobs);
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+    return () => window.removeEventListener("storage", handleStorageChange);
+  }, []);
 
   // Logout function
   const handleLogout = () => {
@@ -148,7 +154,7 @@ export default function Navbar() {
                   <li>
                     <FavouriteJobs
                       savedJobs={savedJobs}
-                      deleteJob={deleteJob}
+                      deleteJob={deleteJob()}
                     />
                   </li>
                   <li>
