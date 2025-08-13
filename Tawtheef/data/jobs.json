@@ -304,7 +304,68 @@
         "twitter": "#",
         "linkedin": "#"
       }
+    },
+    {
+      "id": "8",
+      "logo": "images/job_logo_1.jpg",
+      "title": "front-end",
+      "company": "smart",
+      "location": "cairo",
+      "type": "full time",
+      "image": "images/job_single_img_1.jpg",
+      "description": [
+        "html css js boootstrap react"
+      ],
+      "responsibilities": [
+        "rrrrrrrrrrrrrrrrrrrrrrrrr"
+      ],
+      "education_experience": [
+        "computer science"
+      ],
+      "benefits": [
+        "bbbbbbbbbbbbbbbbbbbbbbbbbb"
+      ],
+      "summary": {
+        "published_on": "8/12/2025",
+        "vacancy": "vvvvvvvvvvvvvvvvvvvvvvvvvvv",
+        "employment_status": "full time",
+        "job_location": "cairo",
+        "salary": "8000",
+        "gender": "Any",
+        "application_deadline": "",
+        "share_links": {
+          "facebook": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      }
+    },
+    {
+      "id": "1000",
+      "logo": "images/job_logo_1.jpg",
+      "title": "fluttter",
+      "company": "",
+      "location": "cairo",
+      "type": "",
+      "image": "images/job_single_img_1.jpg",
+      "description": [],
+      "responsibilities": [],
+      "education_experience": [],
+      "benefits": [],
+      "summary": {
+        "published_on": "8/12/2025",
+        "vacancy": "",
+        "employment_status": "",
+        "job_location": "cairo",
+        "salary": "1000$",
+        "gender": "",
+        "application_deadline": "",
+        "share_links": {
+          "facebook": "#",
+          "twitter": "#",
+          "linkedin": "#"
+        }
+      }
     }
-
   ]
 }

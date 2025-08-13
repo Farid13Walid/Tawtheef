@@ -6,9 +6,12 @@ import FavouriteJobs from "./FavouriteJobs";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import { useJobs } from "../../context/JopContext";
+import { useFavouriteJobs } from "../../context/FavouriteJobsContext";
+
 export default function Navbar() {
+  const { storageJobs, removeJob } = useFavouriteJobs();
+
   const navigator = useNavigate();
-  const { deleteJob } = useJobs();
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -32,19 +35,6 @@ export default function Navbar() {
       }
     }
   }, [localStorage.getItem("userToken")]);
-  const [savedJobs, setSavedJobs] = useState([]);
-  useEffect(() => {
-    const jobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
-    setSavedJobs(jobs);
-
-    const handleStorageChange = () => {
-      const updatedJobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
-      setSavedJobs(updatedJobs);
-    };
-
-    window.addEventListener("storage", handleStorageChange);
-    return () => window.removeEventListener("storage", handleStorageChange);
-  }, []);
 
   // Logout function
   const handleLogout = () => {
@@ -152,10 +142,7 @@ export default function Navbar() {
                     </div>
                   </li>
                   <li>
-                    <FavouriteJobs
-                      savedJobs={savedJobs}
-                      deleteJob={deleteJob()}
-                    />
+                    <FavouriteJobs />;
                   </li>
                   <li>
                     <button

@@ -5,6 +5,7 @@ import style from "./SingleJop.module.css";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useJobs } from "../../context/JopContext";
+import { useFavouriteJobs } from "../../context/FavouriteJobsContext";
 import TestimonialSlider from "../ui/TestimonialSlider";
 import StateSectionContainer from "../ui/StateSectionContainer";
 import MobileAppsSection from "../ui/MobileAppsSection";
@@ -13,13 +14,13 @@ export default function SingleJop() {
   const { id } = useParams();
   const { getJob, currentJob, isLoading } = useJobs();
   const navigate = useNavigate();
-  const [savedJobs, setSavedJobs] = useState([]);
+  const { addJob } = useFavouriteJobs();
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
     getJob(id);
   }, [id]);
-
+  console.log(currentJob);
   if (!currentJob || isLoading) {
     return <div>Loading...</div>;
   }
@@ -31,29 +32,9 @@ export default function SingleJop() {
       navigate("/login");
       return;
     }
-
-    const savedJobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
-    const exists = savedJobs.some((item) => item.id === currentJob.id);
-
-    if (exists) {
-      alert("The job is already saved.");
-      return;
-    }
-
-    const jobToSave = {
-      id: currentJob.id,
-      title: currentJob.title,
-      company: currentJob.company,
-      logo: currentJob.logo || currentJob.companyLogo || "",
-      location: currentJob.location,
-    };
-
-    const newSavedJobs = [...savedJobs, jobToSave];
-    localStorage.setItem("savedJobs", JSON.stringify(newSavedJobs));
-    setSavedJobs(newSavedJobs); // تحديث فوري بدون Refresh
+    addJob(currentJob);
     setIsSaved(true);
   };
-
   return (
     <>
       <section className="w-100">

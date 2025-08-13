@@ -1,23 +1,89 @@
 import React, { useState } from "react";
 import style from "./PostJop.module.css";
 import { useJobs } from "../../context/JopContext";
+import { useNavigate } from "react-router-dom";
+
 export default function PostJop() {
+  const [jobTitle, setJobTitle] = useState("");
+  const [location, setLocation] = useState("");
+  const [jobType, setJobType] = useState("");
   const [jobDescription, setJobDescription] = useState("");
-  const [companyDescription, setCompanyDescription] = useState("");
+  const [responsibilities, setResponsibilities] = useState("");
+  const [educationExperience, setEducationExperience] = useState("");
+  const [benefits, setBenefits] = useState("");
+  const [companyName, setCompanyName] = useState("");
+  const [logo, setLogo] = useState("");
+  const [image, setImage] = useState("");
+  const [vacancy, setVacancy] = useState("");
+  const [salary, setSalary] = useState("");
+  const [gender, setGender] = useState("");
+  const [applicationDeadline, setApplicationDeadline] = useState("");
 
   const { createJob } = useJobs();
+  const navigate = useNavigate();
+
+  function removeValue() {
+    setJobTitle("");
+    setLocation("");
+    setJobType("");
+    setJobDescription("");
+    setResponsibilities("");
+    setEducationExperience("");
+    setBenefits("");
+    setCompanyName("");
+    setLogo("");
+    setImage("");
+    setVacancy("");
+    setSalary("");
+    setGender("");
+    setApplicationDeadline("");
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
-    const jobData = Object.fromEntries(formData.entries()); // يحولها JSON object
+    const newJob = {
+      // id: Date.now(),
+      logo,
+      title: jobTitle,
+      company: companyName,
+      location,
+      type: jobType,
 
-    // لو عندك Textarea controlled state لازم تضيفه يدوي
-    jobData.jobDescription = jobDescription;
-    jobData.companyDescription = companyDescription;
+      image,
+      description: jobDescription
+        .split("\n")
+        .filter((line) => line.trim() !== ""),
+      responsibilities: responsibilities
+        .split("\n")
+        .filter((line) => line.trim() !== ""),
+      education_experience: educationExperience
+        .split("\n")
+        .filter((line) => line.trim() !== ""),
+      benefits: benefits.split("\n").filter((line) => line.trim() !== ""),
+      summary: {
+        published_on: new Date().toLocaleDateString(),
+        vacancy,
+        employment_status: jobType,
 
-    createJob(jobData);
+        job_location: location,
+        salary,
+        gender,
+        application_deadline: applicationDeadline,
+        share_links: {
+          facebook: "#",
+          twitter: "#",
+          linkedin: "#",
+        },
+      },
+    };
+
+    // console.log(newJob);
+    createJob(newJob);
+    removeValue();
+    navigate("/AllJobs");
   };
+
   return (
     <>
       <section className="w-100 m-0">
@@ -25,7 +91,7 @@ export default function PostJop() {
           <div className={style.layer}></div>
         </div>
         <div className={style.contactTitle}>
-          <h1 className="fw-bold">Post Jop</h1>
+          <h1 className="fw-bold">Post Job</h1>
         </div>
       </section>
 
@@ -33,27 +99,26 @@ export default function PostJop() {
         <h3 className="mb-4">Post A Job</h3>
 
         <div className="border p-4 rounded bg-light">
-          <h5 className="mb-4 border-bottom pb-2">Job Details</h5>
-
           <form id="jobForm" onSubmit={handleSubmit}>
-            {/* Featured Image */}
+            {/* Logo */}
             <div className="mb-3">
-              <label className="form-label">Upload Featured Image</label>
+              <label className="form-label">Logo</label>
               <input
-                type="file"
+                type="text"
                 className="form-control"
-                name="featuredImage"
+                value={logo}
+                onChange={(e) => setLogo(e.target.value)}
               />
             </div>
 
-            {/* Email */}
+            {/* Image */}
             <div className="mb-3">
-              <label className="form-label">Email</label>
+              <label className="form-label">Image</label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
-                name="email"
-                placeholder="you@yourdomain.com"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
               />
             </div>
 
@@ -63,8 +128,8 @@ export default function PostJop() {
               <input
                 type="text"
                 className="form-control"
-                name="jobTitle"
-                placeholder="Product Designer"
+                value={jobTitle}
+                onChange={(e) => setJobTitle(e.target.value)}
               />
             </div>
 
@@ -74,56 +139,62 @@ export default function PostJop() {
               <input
                 type="text"
                 className="form-control"
-                name="location"
-                placeholder="e.g. New York"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
               />
-            </div>
-
-            {/* Job Region */}
-            <div className="mb-3">
-              <label className="form-label">Job Region</label>
-              <select className="form-select" name="jobRegion" defaultValue="">
-                <option value="" disabled>
-                  Select Region
-                </option>
-                <option>AnyWhere</option>
-                <option>San Francisco</option>
-                <option>Palo Alto</option>
-                <option>New York</option>
-                <option>Manhattan</option>
-                <option>Ontario</option>
-                <option>Toronto</option>
-                <option>Kansas</option>
-                <option>Mountain View</option>
-              </select>
             </div>
 
             {/* Job Type */}
             <div className="mb-3">
               <label className="form-label">Job Type</label>
-              <select className="form-select" name="jobType" defaultValue="">
-                <option value="" disabled>
-                  Select Job Type
-                </option>
-                <option>Full-time</option>
-                <option>Part-time</option>
-              </select>
-            </div>
-
-            {/* Job Description */}
-            <div className="mb-4">
-              <label className="form-label">Job Description</label>
-              <textarea
+              <input
+                type="text"
                 className="form-control"
-                rows="6"
-                value={jobDescription}
-                onChange={(e) => setJobDescription(e.target.value)}
-                placeholder="Write the job description here..."
+                value={jobType}
+                onChange={(e) => setJobType(e.target.value)}
               />
             </div>
 
-            {/* Company Details */}
-            <h5 className="mb-4 border-bottom pb-2">Company Details</h5>
+            {/* Job Description */}
+            <div className="mb-3">
+              <label className="form-label">Job Description</label>
+              <input
+                type="text"
+                className="form-control"
+                value={jobDescription}
+                onChange={(e) => setJobDescription(e.target.value)}
+              />
+            </div>
+
+            {/* Responsibilities */}
+            <div className="mb-3">
+              <label className="form-label">Responsibilities</label>
+              <textarea
+                className="form-control"
+                value={responsibilities}
+                onChange={(e) => setResponsibilities(e.target.value)}
+              />
+            </div>
+
+            {/* Education & Experience */}
+            <div className="mb-3">
+              <label className="form-label">Education & Experience</label>
+              <textarea
+                className="form-control"
+                value={educationExperience}
+                onChange={(e) => setEducationExperience(e.target.value)}
+              />
+            </div>
+
+            {/* Benefits */}
+            <div className="mb-3">
+              <label className="form-label">Benefits</label>
+              <textarea
+                className="form-control"
+                value={benefits}
+                onChange={(e) => setBenefits(e.target.value)}
+              />
+            </div>
 
             {/* Company Name */}
             <div className="mb-3">
@@ -131,87 +202,84 @@ export default function PostJop() {
               <input
                 type="text"
                 className="form-control"
-                name="companyName"
-                placeholder="e.g. New York"
+                value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)}
               />
             </div>
 
-            {/* Tagline */}
+            {/* Vacancy */}
             <div className="mb-3">
-              <label className="form-label">Tagline (Optional)</label>
+              <label className="form-label">Vacancy</label>
               <input
                 type="text"
                 className="form-control"
-                name="tagline"
-                placeholder="e.g. We build the future"
+                value={vacancy}
+                onChange={(e) => setVacancy(e.target.value)}
               />
             </div>
 
-            {/* Company Description */}
-            <div className="mb-4">
-              <label className="form-label">
-                Company Description (Optional)
-              </label>
-              <textarea
-                className="form-control"
-                rows="6"
-                value={companyDescription}
-                onChange={(e) => setCompanyDescription(e.target.value)}
-                placeholder="Write the company description here..."
-              />
-            </div>
-
-            {/* Website */}
+            {/* Salary */}
             <div className="mb-3">
-              <label className="form-label">Website (Optional)</label>
-              <input
-                type="url"
-                className="form-control"
-                name="website"
-                placeholder="http://"
-              />
-            </div>
-
-            {/* Social Media */}
-            <div className="mb-3">
-              <label className="form-label">Facebook Username (Optional)</label>
+              <label className="form-label">Salary</label>
               <input
                 type="text"
                 className="form-control"
-                name="facebook"
-                placeholder="companyname"
+                value={salary}
+                onChange={(e) => setSalary(e.target.value)}
               />
             </div>
 
+            {/* Application Deadline */}
             <div className="mb-3">
-              <label className="form-label">Twitter Username (Optional)</label>
+              <label className="form-label">Application Deadline</label>
               <input
                 type="text"
                 className="form-control"
-                name="twitter"
-                placeholder="@companyname"
+                value={applicationDeadline}
+                onChange={(e) => setApplicationDeadline(e.target.value)}
               />
             </div>
 
+            {/* Gender */}
             <div className="mb-3">
-              <label className="form-label">LinkedIn Username (Optional)</label>
+              <label className="form-label">Gender</label>
+
+              <div>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Male"
+                  checked={gender === "Male"}
+                  onChange={(e) => setGender(e.target.value)}
+                />{" "}
+                Male
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="Female"
+                  checked={gender === "Female"}
+                  onChange={(e) => setGender(e.target.value)}
+                />{" "}
+                Female
+              </div>
+            <div>
               <input
-                type="text"
-                className="form-control"
-                name="linkedin"
-                placeholder="companyname"
-              />
+                type="radio"
+                name="gender"
+                value="Any"
+                checked={gender === "Any"}
+                onChange={(e) => setGender(e.target.value)}
+              />{" "}
+              Any
+            </div>
             </div>
 
-            {/* Logo */}
-            <div className="mb-4">
-              <label className="form-label">Upload Logo</label>
-              <input type="file" className="form-control" name="companyLogo" />
-            </div>
-
-            {/* Submit Button */}
-            <div className="text-center my-5">
-              <button type="submit" className="btn  btn-primary btn-lg px-5">
+            {/* Submit */}
+            <div className="text-center my-4">
+              <button type="submit" className="btn btn-primary">
                 Post Job
               </button>
             </div>

@@ -1,5 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { FavouriteJobsProvider } from "./context/FavouriteJobsContext";
 
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
@@ -10,9 +11,8 @@ import NotFound from "./Components/NotFound/NotFound";
 import Contact from "./Components/Contact/Contact";
 import PostJop from "./Components/PostJop/PostJop";
 import SingleJop from "./Components/SingleJop/SingleJop";
-import { JobsProvider } from './context/JopContext';
+import { JobsProvider } from "./context/JopContext";
 import AllJobs from "./Components/jobs/AllJobs";
-
 
 function App() {
   let routers = createBrowserRouter([
@@ -34,9 +34,11 @@ function App() {
   ]);
   return (
     <>
-      <JobsProvider>
-      <RouterProvider router={routers} />
-      </JobsProvider>
+      <FavouriteJobsProvider>
+        <JobsProvider>
+          <RouterProvider router={routers} />
+        </JobsProvider>
+      </FavouriteJobsProvider>
     </>
   );
 }

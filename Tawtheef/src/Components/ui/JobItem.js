@@ -9,9 +9,7 @@ export default function JopItem({ job }) {
         key={job.id}
         className={`${styles.jobListing} d-block d-sm-flex pb-3 pb-sm-0 align-items-center`}
       >
-        <Link to={`/SingleJop/${job.id}`} className={styles.jobLink}>
-
-        </Link>
+        <Link to={`/SingleJop/${job.id}`} className={styles.jobLink}></Link>
         <div className={styles.jobListingLogo}>
           <img
             src={job.logo}
@@ -37,7 +35,7 @@ export default function JopItem({ job }) {
           <div className={styles.jobListingMeta}>
             <span
               className={`badge ${
-                job.badgeType === "success" ? "bg-success" : "bg-danger"
+                job.type === "Full Time" ? "bg-success" : "bg-danger"
               }`}
             >
               {job.type}

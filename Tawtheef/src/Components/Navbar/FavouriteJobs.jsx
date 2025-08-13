@@ -1,14 +1,16 @@
 import React from "react";
+import { useFavouriteJobs } from "../../context/FavouriteJobsContext";
+export default function FavouriteJobs() {
+  const { storageJobs, removeJob } = useFavouriteJobs();
 
-export default function FavouriteJobs({ savedJobs, removeJob }) {
   return (
     <div style={{ maxHeight: "300px", overflowY: "auto" }}>
       <h6 className="fw-bold text-primary px-2">Favourite Jobs</h6>
-      {savedJobs.length === 0 ? (
+      {storageJobs.length === 0 ? (
         <p className="text-secondary px-2">No saved jobs yet.</p>
       ) : (
         <ul className="list-unstyled m-0">
-          {savedJobs.map((job) => (
+          {storageJobs.map((job) => (
             <li
               key={job.id}
               className="d-flex align-items-center justify-content-between p-2 border-bottom"
